@@ -66,6 +66,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Une flûte généreuse, mie aérée et croûte fine, parfaite pour accompagner vos repas en famille.",
       img: "https://images.unsplash.com/photo-1568471173242-461f0a730452?auto=format&fit=crop&w=900&q=80",
     },
+    {
+      name: "Pain de seigle",
+      price: "5,50 € / kg",
+      desc: "Mie dense et savoureuse au goût rustique, idéal avec fruits de mer et fromages affinés.",
+      img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Pain aux céréales",
+      price: "5,00 € / kg",
+      desc: "Mélange de cinq céréales et graines toastées, croûte croustillante et mie moelleuse.",
+      img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   viennoiseries: [
     {
@@ -91,6 +103,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       price: "3,80 €",
       desc: "Mariage gourmand de la brioche moelleuse et du feuilletage pur beurre. Idéale pour le petit-déjeuner.",
       img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Pain aux raisins",
+      price: "1,60 €",
+      desc: "Pâte feuilletée roulée, crème pâtissière vanillée et raisins de Corinthe moelleux.",
+      img: "https://images.unsplash.com/photo-1620921568790-c1cf8984624c?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Suisse aux pépites de chocolat",
+      price: "2,20 €",
+      desc: "Brioche moelleuse garnie de crème pâtissière vanille et généreusement parsemée de pépites de chocolat.",
+      img: "https://images.unsplash.com/photo-1606101273945-e9eba91c0dc4?auto=format&fit=crop&w=900&q=80",
     },
   ],
   patisseries: [
@@ -124,6 +148,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Crème onctueuse à la vanille de Madagascar sur une pâte brisée maison, doré au four.",
       img: "https://images.unsplash.com/photo-1568827999250-3f6afff96e66?auto=format&fit=crop&w=900&q=80",
     },
+    {
+      name: "Mille-feuille",
+      price: "3,80 €",
+      desc: "Trois couches de feuilletage caramélisé, crème pâtissière vanille et glaçage marbré.",
+      img: "https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Tarte au citron meringuée",
+      price: "3,80 €",
+      desc: "Crème de citron de Menton acidulée, sablé breton et meringue italienne légèrement dorée.",
+      img: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   snacking: [
     {
@@ -143,6 +179,24 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       price: "9,90 €",
       desc: "Sandwich au choix + boisson fraîche + dessert du jour. La pause gourmande idéale du midi.",
       img: "https://images.unsplash.com/photo-1572448862527-d3c904757de6?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Wrap Poulet",
+      price: "5,50 €",
+      desc: "Galette de blé moelleuse, poulet rôti, crudités fraîches et sauce César maison.",
+      img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Salade César",
+      price: "7,90 €",
+      desc: "Salade croquante, poulet grillé, copeaux de parmesan, croûtons maison et sauce César onctueuse.",
+      img: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Le Croque-Monsieur Maison",
+      price: "4,90 €",
+      desc: "Pain de mie maison, jambon supérieur, béchamel onctueuse et emmental gratiné au four.",
+      img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80",
     },
   ],
 };
@@ -279,6 +333,7 @@ function Hero() {
 
 function Products() {
   const [tab, setTab] = useState<Category>("pains");
+  const [zoom, setZoom] = useState<{ src: string; alt: string } | null>(null);
   return (
     <section id="produits" className="py-20 md:py-28 bg-[var(--cream)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -310,30 +365,38 @@ function Products() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
           {PRODUCTS[tab].map((p) => (
             <article
               key={p.name}
-              className="group bg-white rounded-2xl overflow-hidden border border-[var(--border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="group bg-white rounded-xl overflow-hidden border border-[var(--border)] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-[var(--muted)]">
+              <button
+                type="button"
+                onClick={() => setZoom({ src: p.img, alt: p.name })}
+                className="relative aspect-[4/3] overflow-hidden bg-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
+                aria-label={`Agrandir : ${p.name}`}
+              >
                 <img
                   src={p.img}
                   alt={p.name}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-              </div>
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <h3 className="font-display text-xl text-[var(--anthracite)]">{p.name}</h3>
-                  <span className="text-[var(--bordeaux)] font-bold text-sm whitespace-nowrap">{p.price}</span>
+                <div className="absolute inset-0 bg-[var(--anthracite)]/0 group-hover:bg-[var(--anthracite)]/35 transition-colors flex items-center justify-center">
+                  <ZoomIn className="text-[var(--cream)] opacity-0 group-hover:opacity-100 transition-opacity" size={26} />
                 </div>
-                <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">{p.desc}</p>
-                <div className="mt-4 pt-4 border-t border-[var(--border)] flex items-center gap-2 text-xs text-[var(--anthracite)]/70">
-                  <ShoppingBag size={14} className="text-[var(--gold)]" />
+              </button>
+              <div className="p-4 flex flex-col flex-1">
+                <div className="flex items-start justify-between gap-2 mb-1.5">
+                  <h3 className="font-display text-base text-[var(--anthracite)] leading-tight">{p.name}</h3>
+                  <span className="text-[var(--bordeaux)] font-bold text-xs whitespace-nowrap">{p.price}</span>
+                </div>
+                <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">{p.desc}</p>
+                <div className="mt-3 pt-3 border-t border-[var(--border)] flex items-center gap-1.5 text-[11px] text-[var(--anthracite)]/70">
+                  <ShoppingBag size={12} className="text-[var(--gold)] shrink-0" />
                   <span>
-                    Disponible en boutique — pour réserver,{" "}
+                    Réservez au{" "}
                     <a href={`tel:${PHONE_TEL}`} className="text-[var(--bordeaux)] font-semibold hover:underline">
                       {PHONE}
                     </a>
@@ -353,6 +416,29 @@ function Products() {
           </p>
         </div>
       </div>
+
+      {zoom && (
+        <div
+          onClick={() => setZoom(null)}
+          className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            onClick={() => setZoom(null)}
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition"
+            aria-label="Fermer"
+          >
+            <X size={24} />
+          </button>
+          <img
+            src={zoom.src}
+            alt={zoom.alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+          />
+        </div>
+      )}
     </section>
   );
 }
