@@ -78,6 +78,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Mélange de cinq céréales et graines toastées, croûte croustillante et mie moelleuse.",
       img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=900&q=80",
     },
+    {
+      name: "Le Pain Épeautre Artisanal",
+      price: "5,80 € / kg",
+      desc: "Petit épeautre cultivé en agriculture raisonnée, fermentation longue au levain naturel.",
+      img: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "La Baguette Aux Graines",
+      price: "1,90 €",
+      desc: "Baguette tradition parsemée de graines de sésame, pavot et tournesol torréfiées.",
+      img: "https://images.unsplash.com/photo-1568471173242-461f0a730452?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   viennoiseries: [
     {
