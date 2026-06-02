@@ -543,6 +543,80 @@ function Footer() {
   );
 }
 
+const GALLERY = [
+  { src: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=1200&q=80", alt: "Gâteau d'anniversaire à étages" },
+  { src: "https://images.unsplash.com/photo-1557925923-cd4648e211a0?w=1200&q=80", alt: "Pièce montée fleurie" },
+  { src: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&q=80", alt: "Entremets chocolat" },
+  { src: "https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=1200&q=80", alt: "Gâteau fruits rouges" },
+  { src: "https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=1200&q=80", alt: "Layer cake gourmand" },
+  { src: "https://images.unsplash.com/photo-1464195244916-405fa0a82545?w=1200&q=80", alt: "Création pâtissière sur mesure" },
+];
+
+function Gallery() {
+  const [active, setActive] = useState<number | null>(null);
+  return (
+    <section id="realisations" className="py-20 md:py-28 bg-[var(--cream)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 text-[var(--bordeaux)] text-xs font-bold uppercase tracking-widest mb-3">
+            <Wheat size={14} /> Portfolio
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl text-[var(--anthracite)]">Nos Réalisations Passées</h2>
+          <p className="mt-4 text-[var(--muted-foreground)]">
+            Inspirez-vous de nos créations précédentes pour vos événements. Chaque gâteau est unique et entièrement personnalisable selon vos envies !
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          {GALLERY.map((img, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`group relative overflow-hidden rounded-2xl border border-[var(--border)] focus:outline-none focus:ring-2 focus:ring-[var(--gold)] ${
+                i === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-auto" : "aspect-square"
+              }`}
+              aria-label={`Agrandir : ${img.alt}`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-[var(--anthracite)]/0 group-hover:bg-[var(--anthracite)]/40 transition-colors flex items-center justify-center">
+                <ZoomIn className="text-[var(--cream)] opacity-0 group-hover:opacity-100 transition-opacity" size={32} />
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {active !== null && (
+        <div
+          onClick={() => setActive(null)}
+          className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            onClick={() => setActive(null)}
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition"
+            aria-label="Fermer"
+          >
+            <X size={24} />
+          </button>
+          <img
+            src={GALLERY[active].src}
+            alt={GALLERY[active].alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+          />
+        </div>
+      )}
+    </section>
+  );
+}
+
 function Index() {
   return (
     <div className="bg-[var(--cream)] text-[var(--anthracite)]">
@@ -551,6 +625,7 @@ function Index() {
         <Hero />
         <Products />
         <Cakes />
+        <Gallery />
         <Infos />
       </main>
       <Footer />
