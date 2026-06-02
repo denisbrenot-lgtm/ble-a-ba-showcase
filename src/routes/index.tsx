@@ -190,12 +190,6 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Biscuit Joconde imbibé de café, ganache au chocolat noir et crème au beurre au café. L'élégance française.",
       img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80",
     },
-    {
-      name: "Le Paris-Brest",
-      price: "4,50 €",
-      desc: "Couronne de pâte à choux garnie d'une crème praliné aux noisettes du Piémont torréfiées maison.",
-      img: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&w=900&q=80",
-    },
   ],
   snacking: [
     {
