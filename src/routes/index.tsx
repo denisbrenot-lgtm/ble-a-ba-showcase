@@ -190,7 +190,7 @@ function Hero() {
 
       <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--gold)]/15 border border-[var(--gold)]/30 text-[var(--gold)] text-xs font-semibold uppercase tracking-widest mb-6">
-          <Wheat size={14} /> Artisan Boulanger depuis le bourg
+          <Wheat size={14} /> Boulangerie & Pâtisserie artisanale
         </div>
 
         <div className="bg-[var(--anthracite)]/70 backdrop-blur-md border border-[var(--gold)]/20 rounded-3xl p-8 md:p-12 shadow-2xl">
