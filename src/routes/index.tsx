@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, MapPin, Clock, Star, Mail, ShoppingBag, ChevronRight, Menu, X } from "lucide-react";
+import { Phone, MapPin, Clock, Star, Mail, ShoppingBag, ChevronRight, Menu, X, ZoomIn } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Wheat } from "@/components/Wheat";
 import facade from "@/assets/facade.png.asset.json";
