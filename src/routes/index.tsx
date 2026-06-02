@@ -333,6 +333,7 @@ function Hero() {
 
 function Products() {
   const [tab, setTab] = useState<Category>("pains");
+  const [zoom, setZoom] = useState<{ src: string; alt: string } | null>(null);
   return (
     <section id="produits" className="py-20 md:py-28 bg-[var(--cream)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -364,30 +365,38 @@ function Products() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
           {PRODUCTS[tab].map((p) => (
             <article
               key={p.name}
-              className="group bg-white rounded-2xl overflow-hidden border border-[var(--border)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="group bg-white rounded-xl overflow-hidden border border-[var(--border)] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-[var(--muted)]">
+              <button
+                type="button"
+                onClick={() => setZoom({ src: p.img, alt: p.name })}
+                className="relative aspect-[4/3] overflow-hidden bg-[var(--muted)] focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
+                aria-label={`Agrandir : ${p.name}`}
+              >
                 <img
                   src={p.img}
                   alt={p.name}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-              </div>
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <h3 className="font-display text-xl text-[var(--anthracite)]">{p.name}</h3>
-                  <span className="text-[var(--bordeaux)] font-bold text-sm whitespace-nowrap">{p.price}</span>
+                <div className="absolute inset-0 bg-[var(--anthracite)]/0 group-hover:bg-[var(--anthracite)]/35 transition-colors flex items-center justify-center">
+                  <ZoomIn className="text-[var(--cream)] opacity-0 group-hover:opacity-100 transition-opacity" size={26} />
                 </div>
-                <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">{p.desc}</p>
-                <div className="mt-4 pt-4 border-t border-[var(--border)] flex items-center gap-2 text-xs text-[var(--anthracite)]/70">
-                  <ShoppingBag size={14} className="text-[var(--gold)]" />
+              </button>
+              <div className="p-4 flex flex-col flex-1">
+                <div className="flex items-start justify-between gap-2 mb-1.5">
+                  <h3 className="font-display text-base text-[var(--anthracite)] leading-tight">{p.name}</h3>
+                  <span className="text-[var(--bordeaux)] font-bold text-xs whitespace-nowrap">{p.price}</span>
+                </div>
+                <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">{p.desc}</p>
+                <div className="mt-3 pt-3 border-t border-[var(--border)] flex items-center gap-1.5 text-[11px] text-[var(--anthracite)]/70">
+                  <ShoppingBag size={12} className="text-[var(--gold)] shrink-0" />
                   <span>
-                    Disponible en boutique — pour réserver,{" "}
+                    Réservez au{" "}
                     <a href={`tel:${PHONE_TEL}`} className="text-[var(--bordeaux)] font-semibold hover:underline">
                       {PHONE}
                     </a>
@@ -407,6 +416,29 @@ function Products() {
           </p>
         </div>
       </div>
+
+      {zoom && (
+        <div
+          onClick={() => setZoom(null)}
+          className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            onClick={() => setZoom(null)}
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition"
+            aria-label="Fermer"
+          >
+            <X size={24} />
+          </button>
+          <img
+            src={zoom.src}
+            alt={zoom.alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+          />
+        </div>
+      )}
     </section>
   );
 }
