@@ -448,7 +448,7 @@ function ContactForm() {
         e.preventDefault();
         setSent(true);
       }}
-      className="bg-[var(--anthracite)] text-[var(--cream)] p-8 rounded-3xl shadow-2xl"
+      className="bg-white/5 border border-white/10 backdrop-blur-sm text-[var(--cream)] p-8 rounded-3xl shadow-2xl"
     >
       <h3 className="font-display text-2xl mb-2">Une question ou une demande de gâteau ?</h3>
       <p className="text-sm text-[var(--cream)]/70 mb-6">
