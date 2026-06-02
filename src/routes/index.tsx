@@ -66,6 +66,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Une flûte généreuse, mie aérée et croûte fine, parfaite pour accompagner vos repas en famille.",
       img: "https://images.unsplash.com/photo-1568471173242-461f0a730452?auto=format&fit=crop&w=900&q=80",
     },
+    {
+      name: "Pain de seigle",
+      price: "5,50 € / kg",
+      desc: "Mie dense et savoureuse au goût rustique, idéal avec fruits de mer et fromages affinés.",
+      img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Pain aux céréales",
+      price: "5,00 € / kg",
+      desc: "Mélange de cinq céréales et graines toastées, croûte croustillante et mie moelleuse.",
+      img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   viennoiseries: [
     {
