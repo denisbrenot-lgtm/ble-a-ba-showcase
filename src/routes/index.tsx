@@ -441,15 +441,6 @@ function Products() {
                   <span className="text-[var(--bordeaux)] font-bold text-xs whitespace-nowrap">{p.price}</span>
                 </div>
                 <p className="text-xs text-[var(--muted-foreground)] leading-relaxed">{p.desc}</p>
-                <div className="mt-3 pt-3 border-t border-[var(--border)] flex items-center gap-1.5 text-[11px] text-[var(--anthracite)]/70">
-                  <ShoppingBag size={12} className="text-[var(--gold)] shrink-0" />
-                  <span>
-                    Réservez au{" "}
-                    <a href={`tel:${PHONE_TEL}`} className="text-[var(--bordeaux)] font-semibold hover:underline">
-                      {PHONE}
-                    </a>
-                  </span>
-                </div>
               </div>
             </article>
           ))}
