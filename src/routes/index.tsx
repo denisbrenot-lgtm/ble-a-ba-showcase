@@ -104,6 +104,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Mariage gourmand de la brioche moelleuse et du feuilletage pur beurre. Idéale pour le petit-déjeuner.",
       img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
     },
+    {
+      name: "Pain aux raisins",
+      price: "1,60 €",
+      desc: "Pâte feuilletée roulée, crème pâtissière vanillée et raisins de Corinthe moelleux.",
+      img: "https://images.unsplash.com/photo-1620921568790-c1cf8984624c?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Suisse aux pépites de chocolat",
+      price: "2,20 €",
+      desc: "Brioche moelleuse garnie de crème pâtissière vanille et généreusement parsemée de pépites de chocolat.",
+      img: "https://images.unsplash.com/photo-1606101273945-e9eba91c0dc4?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   patisseries: [
     {
