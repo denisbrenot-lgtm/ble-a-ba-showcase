@@ -376,13 +376,13 @@ function Cakes() {
 
 function Infos() {
   return (
-    <section id="infos" className="py-20 md:py-28 bg-[var(--cream)]">
+    <section id="infos" className="py-20 md:py-28 bg-[var(--anthracite)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 text-[var(--bordeaux)] text-xs font-bold uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 text-[var(--gold)] text-xs font-bold uppercase tracking-widest mb-3">
             <Wheat size={14} /> Infos pratiques
           </div>
-          <h2 className="font-display text-4xl md:text-5xl text-[var(--anthracite)]">Venez nous rencontrer</h2>
+          <h2 className="font-display text-4xl md:text-5xl text-white">Venez nous rencontrer</h2>
         </div>
 
         <div id="contact" className="grid lg:grid-cols-2 gap-8">
@@ -410,19 +410,19 @@ function Infos() {
                 lines: ["Pour réserver un produit ou un gâteau, appelez-nous directement."],
               },
             ].map((item) => (
-              <div key={item.title} className="flex gap-4 p-6 bg-white rounded-2xl border border-[var(--border)]">
-                <div className="shrink-0 w-12 h-12 rounded-xl bg-[var(--bordeaux)]/10 text-[var(--bordeaux)] flex items-center justify-center">
+              <div key={item.title} className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
+                <div className="shrink-0 w-12 h-12 rounded-xl bg-[var(--bordeaux)]/40 text-[var(--gold)] flex items-center justify-center">
                   <item.icon size={22} />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg text-[var(--anthracite)] mb-1">{item.title}</h3>
+                  <h3 className="font-display text-lg text-white mb-1">{item.title}</h3>
                   {item.lines.map((l, i) =>
                     item.href && i === 0 ? (
-                      <a key={i} href={item.href} className="block text-[var(--bordeaux)] font-bold text-lg hover:underline">
+                      <a key={i} href={item.href} className="block text-[var(--gold)] font-bold text-lg hover:underline">
                         {l}
                       </a>
                     ) : (
-                      <p key={i} className="text-[var(--muted-foreground)] text-sm">
+                      <p key={i} className="text-[var(--cream)]/70 text-sm">
                         {l}
                       </p>
                     ),
@@ -431,6 +431,7 @@ function Infos() {
               </div>
             ))}
           </div>
+
 
           <ContactForm />
         </div>
@@ -447,7 +448,7 @@ function ContactForm() {
         e.preventDefault();
         setSent(true);
       }}
-      className="bg-[var(--anthracite)] text-[var(--cream)] p-8 rounded-3xl shadow-2xl"
+      className="bg-white/5 border border-white/10 backdrop-blur-sm text-[var(--cream)] p-8 rounded-3xl shadow-2xl"
     >
       <h3 className="font-display text-2xl mb-2">Une question ou une demande de gâteau ?</h3>
       <p className="text-sm text-[var(--cream)]/70 mb-6">
