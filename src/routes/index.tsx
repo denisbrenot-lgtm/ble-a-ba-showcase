@@ -148,6 +148,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Crème onctueuse à la vanille de Madagascar sur une pâte brisée maison, doré au four.",
       img: "https://images.unsplash.com/photo-1568827999250-3f6afff96e66?auto=format&fit=crop&w=900&q=80",
     },
+    {
+      name: "Mille-feuille",
+      price: "3,80 €",
+      desc: "Trois couches de feuilletage caramélisé, crème pâtissière vanille et glaçage marbré.",
+      img: "https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Tarte au citron meringuée",
+      price: "3,80 €",
+      desc: "Crème de citron de Menton acidulée, sablé breton et meringue italienne légèrement dorée.",
+      img: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   snacking: [
     {
@@ -167,6 +179,24 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       price: "9,90 €",
       desc: "Sandwich au choix + boisson fraîche + dessert du jour. La pause gourmande idéale du midi.",
       img: "https://images.unsplash.com/photo-1572448862527-d3c904757de6?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Wrap Poulet",
+      price: "5,50 €",
+      desc: "Galette de blé moelleuse, poulet rôti, crudités fraîches et sauce César maison.",
+      img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Salade César",
+      price: "7,90 €",
+      desc: "Salade croquante, poulet grillé, copeaux de parmesan, croûtons maison et sauce César onctueuse.",
+      img: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Le Croque-Monsieur Maison",
+      price: "4,90 €",
+      desc: "Pain de mie maison, jambon supérieur, béchamel onctueuse et emmental gratiné au four.",
+      img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80",
     },
   ],
 };
