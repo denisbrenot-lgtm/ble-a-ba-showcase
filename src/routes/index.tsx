@@ -128,6 +128,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Brioche moelleuse garnie de crème pâtissière vanille et généreusement parsemée de pépites de chocolat.",
       img: "https://images.unsplash.com/photo-1606101273945-e9eba91c0dc4?auto=format&fit=crop&w=900&q=80",
     },
+    {
+      name: "Le Torsadé au Chocolat",
+      price: "2,40 €",
+      desc: "Pâte feuilletée torsadée à la main, généreusement garnie de chocolat noir 70%.",
+      img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "La Chouquette Dorée",
+      price: "3,50 € le sachet de 10",
+      desc: "Petits choux dorés au four, généreusement parsemés de gros grains de sucre perlé.",
+      img: "https://images.unsplash.com/photo-1612203985729-70726954388c?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   patisseries: [
     {
