@@ -184,6 +184,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Crème de citron de Menton acidulée, sablé breton et meringue italienne légèrement dorée.",
       img: "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=80",
     },
+    {
+      name: "L'Opéra",
+      price: "4,20 €",
+      desc: "Biscuit Joconde imbibé de café, ganache au chocolat noir et crème au beurre au café. L'élégance française.",
+      img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Le Paris-Brest",
+      price: "4,50 €",
+      desc: "Couronne de pâte à choux garnie d'une crème praliné aux noisettes du Piémont torréfiées maison.",
+      img: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   snacking: [
     {
@@ -221,6 +233,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       price: "4,90 €",
       desc: "Pain de mie maison, jambon supérieur, béchamel onctueuse et emmental gratiné au four.",
       img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "La Quiche Saumon-Épinards",
+      price: "5,20 € la part",
+      desc: "Pâte brisée maison, saumon fumé d'Écosse, épinards frais et appareil crémeux à la muscade.",
+      img: "https://images.unsplash.com/photo-1591985666643-1ecc67616216?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "La Fougasse Lardons-Fromage",
+      price: "4,80 €",
+      desc: "Pain plat provençal moelleux, généreusement garni de lardons fumés et d'emmental gratiné.",
+      img: "https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?auto=format&fit=crop&w=900&q=80",
     },
   ],
 };
