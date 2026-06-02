@@ -54,6 +54,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Levain naturel, longue fermentation, farine de meule. Une signature de la maison.",
       img: levain,
     },
+    {
+      name: "Le Pain Complet aux Graines",
+      price: "5,20 € / kg",
+      desc: "Farine complète, mélange de graines de tournesol, lin et sésame. Riche en fibres et plein de caractère.",
+      img: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "La Flûte Gardoise",
+      price: "1,80 €",
+      desc: "Une flûte généreuse, mie aérée et croûte fine, parfaite pour accompagner vos repas en famille.",
+      img: "https://images.unsplash.com/photo-1568471173242-461f0a730452?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   viennoiseries: [
     {
@@ -67,6 +79,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       price: "1,50 €",
       desc: "Deux barres de chocolat noir enveloppées d'une pâte feuilletée pur beurre.",
       img: painchoc,
+    },
+    {
+      name: "Le Chausson aux Pommes",
+      price: "1,90 €",
+      desc: "Feuilletage croustillant garni d'une compotée de pommes maison, légèrement vanillée.",
+      img: "https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "La Brioche Feuilletée",
+      price: "3,80 €",
+      desc: "Mariage gourmand de la brioche moelleuse et du feuilletage pur beurre. Idéale pour le petit-déjeuner.",
+      img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
     },
   ],
   patisseries: [
@@ -82,6 +106,24 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       desc: "Biscuit moelleux, mousse légère, framboises fraîches. Un grand classique de la maison.",
       img: framboisier,
     },
+    {
+      name: "L'Éclair au Café",
+      price: "3,20 €",
+      desc: "Pâte à choux délicate, crème pâtissière au café d'exception, glaçage fondant brillant.",
+      img: "https://images.unsplash.com/photo-1620980776848-84cd97194fae?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "La Tartelette aux Fraises",
+      price: "3,90 €",
+      desc: "Sablé breton, crème vanille bourbon et fraises Gariguette sélectionnées chez nos producteurs.",
+      img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Le Flan Pâtissier",
+      price: "3,50 € la part",
+      desc: "Crème onctueuse à la vanille de Madagascar sur une pâte brisée maison, doré au four.",
+      img: "https://images.unsplash.com/photo-1568827999250-3f6afff96e66?auto=format&fit=crop&w=900&q=80",
+    },
   ],
   snacking: [
     {
@@ -89,6 +131,18 @@ const PRODUCTS: Record<Category, { name: string; price: string; desc: string; im
       price: "3,50 — 6,50 €",
       desc: "Préparations maison du jour : quiche lorraine, sandwichs garnis, tartes salées.",
       img: quiche,
+    },
+    {
+      name: "Le Panini Italien",
+      price: "5,90 €",
+      desc: "Pain panini grillé, mozzarella fondante, tomate, basilic frais et jambon cru d'Italie.",
+      img: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Formule Déjeuner",
+      price: "9,90 €",
+      desc: "Sandwich au choix + boisson fraîche + dessert du jour. La pause gourmande idéale du midi.",
+      img: "https://images.unsplash.com/photo-1572448862527-d3c904757de6?auto=format&fit=crop&w=900&q=80",
     },
   ],
 };
@@ -288,6 +342,15 @@ function Products() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-16 max-w-2xl mx-auto text-center">
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-[var(--anthracite)]">
+            Et bien plus encore à découvrir en boutique...
+          </h3>
+          <p className="mt-4 text-[var(--muted-foreground)] leading-relaxed">
+            Notre fournil regorge de gourmandises quotidiennes ! Sandwichs du jour, pains spéciaux éphémères ou viennoiseries de saison... N'hésitez pas à passer nous voir ou à nous appeler pour connaître nos créations du moment.
+          </p>
         </div>
       </div>
     </section>
