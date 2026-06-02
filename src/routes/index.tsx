@@ -272,15 +272,6 @@ function Hero() {
             </a>
           </div>
         </div>
-
-        <div className="mt-16 max-w-2xl mx-auto text-center">
-          <h3 className="font-display text-2xl md:text-3xl font-bold text-[var(--anthracite)]">
-            Et bien plus encore à découvrir en boutique...
-          </h3>
-          <p className="mt-4 text-[var(--muted-foreground)] leading-relaxed">
-            Notre fournil regorge de gourmandises quotidiennes ! Sandwichs du jour, pains spéciaux éphémères ou viennoiseries de saison... N'hésitez pas à passer nous voir ou à nous appeler pour connaître nos créations du moment.
-          </p>
-        </div>
       </div>
     </section>
   );
